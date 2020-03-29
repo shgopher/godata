@@ -2,16 +2,16 @@ package godata
 
 type Stack struct {
 	leng int
-	val    []interface{}
+	val  []interface{}
 }
 
-func NewStack() *Stack {
+func NewStack(count int) *Stack {
 	return &Stack{
 		leng: 0,
-		val:    nil,
+		val:  make([]interface{}, 0, count),
 	}
 }
-func(s *Stack)Length()int{
+func (s *Stack) Length() int {
 	return s.leng
 }
 func (s *Stack) Push(v interface{}) int {
