@@ -1,5 +1,19 @@
 # godata
-Basic data structures and operations, such as stacks, queues, heaps, etc.
+Basic data structures and operations written in Go which  golang.org/pkg/container don't support such as stack, queue, etc.
+## Quick start
+```go
+import(
+  "import github.com/googege/godata"
+)
+func main(){
+  stack := godata.NewStack()
+  stack.Push(1)
+  stack.Length()
+  stack.Top()
+  stack.Pop()
+}
+
+```
 ## HERE
 |项目|介绍|
 |:---:|:---:|
