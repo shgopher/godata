@@ -2,13 +2,13 @@ package godata
 
 type Stack struct {
 	leng int
-	Val    []interface{}
+	val    []interface{}
 }
 
 func NewStack() *Stack {
 	return &Stack{
 		leng: 0,
-		Val:    nil,
+		val:    nil,
 	}
 }
 func(s *Stack)Length()int{
@@ -18,14 +18,14 @@ func (s *Stack) Push(v interface{}) int {
 	if v == nil {
 		return -1
 	}
-	s.Val = append(s.Val, v)
+	s.val = append(s.val, v)
 	s.leng++
 	return s.Length()
 }
 func (s *Stack) Pop() interface{} {
 	if s.Length() > 0 {
-		value := s.Val[s.leng-1]
-		s.Val = s.Val[:s.leng-1]
+		value := s.val[s.leng-1]
+		s.val = s.val[:s.leng-1]
 		s.leng--
 		return value
 	}
@@ -34,7 +34,7 @@ func (s *Stack) Pop() interface{} {
 }
 func (s *Stack) Top() interface{} {
 	if s.Length() > 0 {
-		return s.Val[s.leng-1]
+		return s.val[s.leng-1]
 	}
 
 	return nil
