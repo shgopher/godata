@@ -6,7 +6,7 @@ import(
   import "github.com/googege/godata"
 )
 func main(){
-  stack := godata.NewStack()
+  stack := godata.NewStack(5)
   stack.Push(1)
   stack.Length()
   stack.Top()

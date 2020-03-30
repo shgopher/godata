@@ -14,11 +14,13 @@ func NewQueue(count int) *Queue{
 func (q *Queue) Length() int {
 	return q.leng
 }
+// return length of the queue
 func (q *Queue) Push(value interface{}) int {
 	q.val = append(q.val, value)
 	q.leng++
 	return q.Length()
 }
+// return the top of queue,and delete a node of the queue.
 func (q *Queue) Pop() interface{} {
 	var value interface{}
 	if q.Length() > 1 {
