@@ -4,7 +4,7 @@ type Stack struct {
 	leng int
 	val  []interface{}
 }
-
+//return the cap of the slice.
 func NewStack(count int) *Stack {
 	return &Stack{
 		leng: 0,
