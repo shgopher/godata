@@ -21,12 +21,7 @@ func (h *MinHeap) Pop() interface{} {
 	*h = old[0 : n-1]
 	return x
 }
-func (h *MinHeap)Top()interface{}  {
-	old := *h
-	n := len(old)
-	x := old[n-1]
-	return x
-}
+
 
 func PopMin(m *MinHeap) int{
 	if m.Len() > 0 {
@@ -38,4 +33,10 @@ func PopMin(m *MinHeap) int{
 func PushMin(m *MinHeap,value int){
 	heap.Init(m)
 	heap.Push(m,value)
+}
+func TopMin(m *MinHeap)int {
+	heap.Init(m)
+	value := heap.Pop(m)
+	heap.Push(m,value)
+	return value.(int)
 }
