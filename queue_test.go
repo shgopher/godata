@@ -19,5 +19,12 @@ func TestQueue(t *testing.T) {
 	fmt.Println(queue.Length())
 	fmt.Println(queue.val)
 	fmt.Println("top",queue.Top())
+	queue.Push(11)
+	queue.Push(12)
+	queue.Push(13)
+	fmt.Println(queue.PopBack())
+	fmt.Println(queue.PopBack())
+	fmt.Println(queue.PopBack())
+
 
 }

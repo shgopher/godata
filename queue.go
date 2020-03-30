@@ -37,6 +37,22 @@ func (q *Queue) Pop() interface{} {
 
 	return value
 }
+func(q *Queue) PopBack() interface{} {
+	var value interface{}
+	if q.Length() > 1 {
+		value = q.val[q.Length()-1]
+		q.val = q.val[:q.Length()-1]
+		q.leng--
+	} else if q.Length() == 1 {
+		value = q.val[q.Length()-1]
+		q.val = nil
+		q.leng--
+	} else {
+		return nil
+	}
+
+	return value
+}
 func (q *Queue) Top() interface{} {
 	if q.Length() > 0 {
 		return q.val[0]
