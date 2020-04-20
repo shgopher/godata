@@ -3,7 +3,7 @@ Basic data structures and operations written in Go which  golang.org/pkg/contain
 ## Quick start
 ```go
 import(
-  import "github.com/googege/godata"
+  "github.com/googege/godata"
 )
 func main(){
   stack := godata.NewStack(5)
