@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestNode_BFS(t *testing.T) {
+func dd()*Node{
 	n := new(Node)
 	n.Value= 12
 	n.Child = []*Node{
@@ -50,5 +50,14 @@ func TestNode_BFS(t *testing.T) {
 		},
 
 	}
+	return n
+}
+func TestNode_BFS(t *testing.T) {
+	n := dd()
 	fmt.Println(n.BFS(18787659))
+}
+func BenchmarkNode_BFS(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		dd().BFS(18787659)
+	}
 }
