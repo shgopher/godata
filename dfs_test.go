@@ -9,6 +9,12 @@ func TestDNode_DFS(t *testing.T) {
 	fmt.Println(ddd().DFS(ma,1))
 
 }
+func BenchmarkDNode_DFS(b *testing.B) {
+	t := ddd()
+	for i := 0; i < b.N; i++ {
+		t.DFS(ma,10320)
+	}
+}
 func ddd()*DNode{
 	n := new(DNode)
 	n.Value= 12

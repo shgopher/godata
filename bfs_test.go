@@ -57,7 +57,8 @@ func TestNode_BFS(t *testing.T) {
 	fmt.Println(n.BFS(18787659))
 }
 func BenchmarkNode_BFS(b *testing.B) {
+	t := dd()
 	for i := 0; i < b.N; i++ {
-		dd().BFS(18787659)
+		t.BFS(18787659)
 	}
 }
