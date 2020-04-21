@@ -10,7 +10,7 @@ func (n *Node) BFS(value interface{}) *Node {
 	// 定义
 	ma := make(map[*Node]int)
 	result := &Node{}
-	queue := NewQueue(1)
+	queue := NewQueue(10)
 	// 首行辅助任务完成
 	queue.Push(n)
 	ma[n]++
