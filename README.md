@@ -8,19 +8,19 @@ import(
 )
 func main(){
 // stack
-  stack := godata.NewStack(5)
-  stack.Push(1)
-  stack.Length()
-  stack.Top()
-  stack.Pop()
+    stack := godata.NewStack(5)
+    stack.Push(1)
+    stack.Length()
+    stack.Top()
+    stack.Pop()
 // trie
-trie := NewTrie()
-trie.Insert("hello world")
-trie.Insert("hello China")
-trie.Insert("hello My dear")
-trie.Search("hello world")
-trie.StartWith("he")
-trie.Image("he")
+    trie := NewTrie()
+    trie.Insert("hello world")
+    trie.Insert("hello China")
+    trie.Insert("hello My dear")
+    trie.Search("hello world")
+    trie.StartWith("he")
+    trie.Image("he")
 }
 
 ```
