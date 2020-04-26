@@ -2,15 +2,25 @@
 Basic data structures and operations written in Go which  golang.org/pkg/container don't support such as stack, queue, etc.
 ## Quick start
 ```go
+package main
 import(
   "github.com/googege/godata"
 )
 func main(){
+// stack
   stack := godata.NewStack(5)
   stack.Push(1)
   stack.Length()
   stack.Top()
   stack.Pop()
+// trie
+trie := NewTrie()
+trie.Insert("hello world")
+trie.Insert("hello China")
+trie.Insert("hello My dear")
+trie.Search("hello world")
+trie.StartWith("he")
+trie.Image("he")
 }
 
 ```
