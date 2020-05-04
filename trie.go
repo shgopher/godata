@@ -1,6 +1,6 @@
 package godata
 
-// 仅支持 小写字符
+// support all utf8 code.
 type Trie struct { // 字典树使用数组不如hash table 好使。还有 一个节点的值存在于他的children的k上 所以其实字典树没有节点 所谓值
 	// 都是存在于children中的
 	Children map[rune]*Trie
@@ -20,7 +20,7 @@ func NewTrie() *Trie {
 /** Inserts a word into the trie. */
 func (t *Trie) Insert(word string)  {
 	for _,v := range word {
-		if t.Children[v] == nil { // 使用 v - 'a' 是为了获取0值
+		if t.Children[v] == nil {
 			t.Children[v] = &Trie { /// 插入的时候看是否存在这个k了，如果有了就往下遍历，如果没有就新建。
 				IsWord:false,
 				Children: map[rune]*Trie{},

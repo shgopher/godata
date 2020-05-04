@@ -2,6 +2,7 @@ package godata
 type UnionFind struct {
 	roots []int
 }
+// new a union & find.
 func NewUnionFind(roots int)*UnionFind{
 	ma := make([]int,roots)
 	for i:= 0;i < roots;i++ {
