@@ -1,6 +1,6 @@
 package godata
 
-// 位图
+// bit map or bit array.
 type BitMap struct {
 	bits []uint8
 	max  uint64

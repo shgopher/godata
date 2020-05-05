@@ -1,8 +1,9 @@
 package godata
 
 // support all utf8 code.
-type Trie struct { // 字典树使用数组不如hash table 好使。还有 一个节点的值存在于他的children的k上 所以其实字典树没有节点 所谓值
-	// 都是存在于children中的
+type Trie struct {
+	// the node's value is her children's index .so the node does not have real value.
+	// or you can say ,she is not have value,the child is her value.
 	Children map[rune]*Trie
 	IsWord bool
 }
@@ -21,14 +22,14 @@ func NewTrie() *Trie {
 func (t *Trie) Insert(word string)  {
 	for _,v := range word {
 		if t.Children[v] == nil {
-			t.Children[v] = &Trie { /// 插入的时候看是否存在这个k了，如果有了就往下遍历，如果没有就新建。
+			t.Children[v] = &Trie {
 				IsWord:false,
 				Children: map[rune]*Trie{},
 			}
 		}
-		t = t.Children[v] // 往下遍历 类似 node= node.next
+		t = t.Children[v]
 	}
-	t.IsWord = true // 将已经 文字结束设置为true
+	t.IsWord = true // it is finished.you let the IsWord = true.
 }
 
 
@@ -41,7 +42,7 @@ func (t *Trie) Search(word string) bool {
 		}
 		t = t.Children[v]
 	}
-	return t.IsWord // 为了看是不是前缀还是说是真的全部
+	return t.IsWord // we dont know it's the whole word,or just pre,we we return IsWord
 }
 
 
@@ -54,8 +55,9 @@ func (t *Trie) StartsWith(prefix string) (bool,*Trie) {
 		}
 		t = t.Children[v]
 	}
-	return true,t // 只要匹配直接返回true，反正都符合了。
+	return true,t // because we dont car it's whole word or just only prefix,becase we just want prefix.
 }
+// return the values which match the prefix.
 func(t *Trie)Image(prefix string) [][]rune {
 	result := make([][]rune,0)
 	re := make([]rune,0,len(prefix))
@@ -66,6 +68,7 @@ func(t *Trie)Image(prefix string) [][]rune {
 	}
 	return result
 }
+
 func rangeTrie(t *Trie,result *[][]rune,re []rune){
 	if t.IsWord == true {
 		ma := make([]rune,len(re))

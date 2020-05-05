@@ -5,24 +5,21 @@ type Node struct {
 	Child []*Node
 }
 
-// 寻找到目标值，并且返回目标struct. node是要加入搜索的root节点，value是目标值
+// node is the root，value is target
 func (n *Node) BFS(value interface{}) *Node {
-	// 定义
 	ma := make(map[*Node]int)
 	result := &Node{}
 	queue := NewQueue(10)
-	// 首行辅助任务完成
+	// a mother queue.
 	queue.Push(n)
 	ma[n]++
-	// 开始循环寻找
-L:
 	for queue.Length() > 0 {
 		v := queue.Pop()
 		val := v.(*Node)
 		ma[val]++
 		if val.Value == value {
 			result = val
-			break L
+			break
 		}
 		for _, v := range val.Child {
 			if _,ok := ma[v];!ok {

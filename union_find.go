@@ -12,14 +12,14 @@ func NewUnionFind(roots int)*UnionFind{
 		roots: ma,
 	}
 }
-// 寻找老大的过程
+// find root(his boss)
 func(u *UnionFind)FindRoot(i int)int{
 	root := i
-	// 寻找自己的大boss
+	// find the boss
 	for u.roots[root] != root {
 		root = u.roots[root]
 	}
-	// 并查集的合并
+	// union all node to root.
 	for u.roots[i] != i{
 		u.roots[i],i = root,u.roots[i]
 	}

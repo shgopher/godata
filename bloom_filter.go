@@ -44,11 +44,9 @@ func (b *BloomFilter) IsExit(value []byte) bool {
 }
 // this HashShower fuction is fast but not safety.
 func HashShower(data []byte, seed uint32) uint64 {
-	//d := sha256.Sum256(data)
-	//data = d[:]
 	HashShower64 := mh.New64WithSeed(seed)
 	HashShower64.Write(data)
-	// 为了获取的值不要太大，太大容易造成内存浪费，所以对一千万取摸，
-	//这样得到的数据都在1000万以内，1000万的bit结果也就是11mB,这个等级OK。
+	// in order to use less mem,so it should a % n;
+	//a %b == a & b -1  (b must 2^n)
 	return HashShower64.Sum64() & (MAX_DB-2)
 }
