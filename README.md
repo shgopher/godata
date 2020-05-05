@@ -1,5 +1,19 @@
 # godata
 Basic data structures and operations written in Go which  golang.org/pkg/container don't support such as stack, queue, etc.
+
+|list|done|
+|:---:|:---:|
+|trie|:ok:|
+|bitmap|:ok:|
+|lru|:ok:|
+|heap|:ok:|
+|stack|:ok:|
+|queue|:ok:|
+|dfs|:ok:|
+|bfs|:ok:|
+|union and find|:ok:|
+|skiplist|:no:|
+|b|:no:|
 ## Quick start
 ```go
 package main
