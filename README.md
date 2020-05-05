@@ -12,8 +12,9 @@ Basic data structures and operations written in Go which  golang.org/pkg/contain
 |dfs|:ok:|
 |bfs|:ok:|
 |union and find|:ok:|
-|skiplist|:no:|
-|b|:no:|
+|skiplist|:x:|
+|b|:x:|
+|graph|:x:|
 ## Quick start
 ```go
 package main
