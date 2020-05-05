@@ -18,8 +18,7 @@ Basic data structures and operations written in Go which  golang.org/pkg/contain
 |graph|:x:|
 |Dancing Links|:x:|
 |segment tree|:x:|
-|forest|:x:|
-|Huffman Coding|:x:|
+|Huffman tree|:x:|
 ## Quick start
 ```go
 package main
