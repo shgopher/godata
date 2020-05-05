@@ -5,6 +5,7 @@ Basic data structures and operations written in Go which  golang.org/pkg/contain
 |:---:|:---:|
 |trie|:ok:|
 |bitmap|:ok:|
+|bloom filter|:ok:|
 |lru|:ok:|
 |heap|:ok:|
 |stack|:ok:|
@@ -15,6 +16,10 @@ Basic data structures and operations written in Go which  golang.org/pkg/contain
 |skiplist|:x:|
 |b|:x:|
 |graph|:x:|
+|Dancing Links|:x:|
+|segment tree|:x:|
+|forest|:x:|
+|Huffman Coding|:x:|
 ## Quick start
 ```go
 package main
