@@ -10,6 +10,10 @@ type BloomFilter struct {
 	db *BitMap
 	k  int
 }
+//todo
+type CuckooFilter struct {
+
+}
 
 const (
 	MAX_DB = 8388609
@@ -50,3 +54,4 @@ func HashShower(data []byte, seed uint32) uint64 {
 	//a %b == a & b -1  (b must 2^n)
 	return HashShower64.Sum64() & (MAX_DB-2)
 }
+
