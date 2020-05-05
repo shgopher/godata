@@ -2,7 +2,6 @@ package godata
 
 // BloomFilter
 import (
-	"crypto/sha256"
 	mh "github.com/spaolacci/murmur3"
 	"sync"
 )
@@ -15,7 +14,7 @@ type BloomFilter struct {
 // max is the max of bitmap number k is the number of HashShower fuction.
 func NewBloomFilter(k int) *BloomFilter {
 	return &BloomFilter{
-		db: NewBitMap(10000001),
+		db: NewBitMap(8388609),
 		k:  k,
 	}
 }
@@ -41,9 +40,11 @@ func (b *BloomFilter) IsExit(value []byte) bool {
 }
 // this HashShower fuction is fast but not safety.
 func HashShower(data []byte, seed uint32) uint64 {
-	d := sha256.Sum256(data)
-	data = d[:]
+	//d := sha256.Sum256(data)
+	//data = d[:]
 	HashShower64 := mh.New64WithSeed(seed)
 	HashShower64.Write(data)
-	return HashShower64.Sum64() & (10000000-1)
+	// 为了获取的值不要太大，太大容易造成内存浪费，所以对一千万取摸，
+	//这样得到的数据都在1000万以内，1000万的bit结果也就是11mB,这个等级OK。
+	return HashShower64.Sum64() & (8388608-1)
 }
