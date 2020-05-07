@@ -1,12 +1,11 @@
 package godata
 
 import (
-	"fmt"
 	"testing"
 )
 
 func TestDNode_DFS(t *testing.T) {
-	fmt.Println(ddd().DFS(ma,1))
+	t.Log(ddd().DFS(ma,1))
 
 }
 func BenchmarkDNode_DFS(b *testing.B) {

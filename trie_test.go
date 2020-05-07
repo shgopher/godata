@@ -1,7 +1,6 @@
 package godata
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -11,11 +10,11 @@ func TestTrie(t *testing.T) {
 	trie.Insert("😄 嘟嘟嘟")
 	trie.Insert("😄 你看看我是谁")
 	trie.Insert("😄 我tm的真帅")
-	fmt.Println("test search",trie.Search("😄"))
-	fmt.Println(trie.StartsWith("😄"))
-	fmt.Println("test search2",trie.Search("😄 嘿嘿嘿"))
+	t.Log("test search",trie.Search("😄"))
+	t.Log(trie.StartsWith("😄"))
+	t.Log("test search2",trie.Search("😄 嘿嘿嘿"))
 	for _, v := range trie.Image("😄") {
-			fmt.Println("测试结果",string(v))
+			t.Log("测试结果",string(v))
 	}
 }
 func BenchmarkTrie_Insert(b *testing.B) {
@@ -120,7 +119,7 @@ func TestTrie_Image(t *testing.T) {
 	trie.Insert(w8)
 	trie.Insert(w9)
 	for _,v := range trie.Image("google is my") {
-		fmt.Println(string(v))
+		t.Log(string(v))
 	}
 }
 

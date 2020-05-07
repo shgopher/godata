@@ -6,7 +6,7 @@ type BitMap struct {
 	max  uint64
 }
 
-// return a new bit map. if max > 2^64-1 ,return nil
+// return a new bit map.
 func NewBitMap(max uint64) *BitMap {
 	return &BitMap{
 		max:  max,

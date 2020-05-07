@@ -1,7 +1,6 @@
 package godata
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -15,10 +14,10 @@ func TestMinHeap(t *testing.T) {
 	PushMin(&a,43)
 	PushMin(&a,51)
 	PushMin(&a,63)
-	fmt.Println(PopMin(&a))
-	fmt.Println(PopMin(&a))
-	fmt.Println(PopMin(&a))
-	fmt.Println(PopMin(&a))
-	fmt.Println(PopMin(&a))
-	fmt.Println(PopMin(&a))
+	t.Log(PopMin(&a))
+	t.Log(PopMin(&a))
+	t.Log(PopMin(&a))
+	t.Log(PopMin(&a))
+	t.Log(PopMin(&a))
+	t.Log(PopMin(&a))
 }

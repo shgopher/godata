@@ -1,7 +1,6 @@
 package godata
 
 import (
-	"fmt"
 	"testing"
 )
 
@@ -54,7 +53,8 @@ func dd()*Node{
 }
 func TestNode_BFS(t *testing.T) {
 	n := dd()
-	fmt.Println(n.BFS(18787659))
+	t.Fatal()
+	t.Log(n.BFS(18787659))
 }
 func BenchmarkNode_BFS(b *testing.B) {
 	t := dd()
