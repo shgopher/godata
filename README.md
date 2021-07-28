@@ -1,4 +1,6 @@
 # godata
+[![Goproxy.cn](https://goproxy.cn/stats/github.com/shgopher/godata/badges/download-count.svg)](https://goproxy.cn)
+
 Basic data structures and operations written in Go which  golang.org/pkg/container don't support such as stack, queue, etc.
 
 |list|done|
